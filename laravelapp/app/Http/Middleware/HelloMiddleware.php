@@ -21,6 +21,8 @@ class HelloMiddleware
         //     ['name'=>'hanako', 'mail'=>'hanako@tanaka']
         // ];
 
+        // $request->merge(['data'=>$data]);
+
         $response = $next($request);
         $content = $response->content();
 

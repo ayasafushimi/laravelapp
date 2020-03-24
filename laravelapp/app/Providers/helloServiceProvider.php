@@ -24,11 +24,12 @@ class HelloServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        view()->composer(
-            'hello.index', function ($view) {
-                $view->with('view_message', 'composer message!');
-             }
-
+        View::composer(
+            'hello.index',
+            // function($view){
+            //     $view->with('view_message', 'composer message!');
+            // }
+            'App\Http\Composers\HelloComposer'
         );
     }
 }
